@@ -1,1 +1,0 @@
-# ligaopengde.github.io

@@ -5,85 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>中国地图</title>
-    <link rel="stylesheet" href="rili.css">
-    <script src="rili.js" type="module"></script>
     <script src="./jquery.min.js"></script>
     <script src="./echarts.min.js"></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <style>
-        #main {
-            float: left;
-        }
-        .container {
-            float: right;
-        }
-    </style>
+    <script src="./shine.js"></script>
+    <script src="./vintage.js"></script>
 </head>
 
 <body>
-    <div id="main" style="width: 1300px; height: 930px"></div>
-    <div class="container">
-        <header class="today">
-            <div class="day">9</div>
-            <div class="month">October</div>
-        </header>
-        <main class="calendar">
-            <div class="days">
-                <span>Sun</span>
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wed</span>
-                <span>Thu</span>
-                <span>Fri</span>
-                <span>Sat</span>
-            </div>
-            <div class="dates">
-                <span class="previous-month">27</span>
-                <span class="previous-month">28</span>
-                <span class="previous-month">29</span>
-                <span class="previous-month">30</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>6</span>
-                <span>7</span>
-                <span>8</span>
-                <span class="current-day">9</span>
-                <span>10</span>
-                <span>11</span>
-                <span>12</span>
-                <span>13</span>
-                <span>14</span>
-                <span>15</span>
-                <span>16</span>
-                <span>17</span>
-                <span>18</span>
-                <span>19</span>
-                <span>20</span>
-                <span>21</span>
-                <span>22</span>
-                <span>23</span>
-                <span>24</span>
-                <span>25</span>
-                <span>26</span>
-                <span>27</span>
-                <span>28</span>
-                <span>29</span>
-                <span>30</span>
-                <span>31</span>
-                <span class="next-month">1</span>
-                <span class="next-month">2</span>
-                <span class="next-month">3</span>
-                <span class="next-month">4</span>
-                <span class="next-month">5</span>
-                <span class="next-month">6</span>
-                <span class="next-month">7</span>
-            </div>
-        </main>
-    </div>
+    <div id="main" style="width: 1920px; height: 1000px"></div>
+
     <script >
         const provinces_name2code = {
             '北京市': '110000', '天津市': '120000', '河北省': '130000', '山西省': '140000',
@@ -96,7 +26,7 @@
         };
 
         // 假设主题名称是 "vintage"
-        var myChart = echarts.init(document.getElementById("main"), "vintage");
+        var myChart = echarts.init(document.getElementById("main"), "shine");
         // // 初始化全国地图
         loadMap("./china.json", "china");
         function loadMap(mapCode, name) {
@@ -185,7 +115,7 @@
                     console.log(params['name']);
                     $.get("https://geo.datav.aliyun.com/areas_v3/bound/" + String(provinces_name2code[params['name']]) + "_full.json", function (res) {
                         //使用 HTTP GET 请求从服务器加载数据
-                        echarts.registerMap(params['name'], res, 'vintage'); //注册可用地图
+                        echarts.registerMap(params['name'], res, 'shine'); //注册可用地图
                         var option = {
                             geo: {
                                 type: "map",

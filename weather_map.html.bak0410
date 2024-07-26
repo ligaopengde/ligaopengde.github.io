@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中国地图</title>
+  <script src="./jquery.min.js"></script>
+  <script src="./echarts.min.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="main" style="width: 1200px; height: 1000px"></div>
+
+  <script type="text/javascript">
+    const provinces_name2code = {
+      '北京市': '110000', '天津市': '120000', '河北省': '130000', '山西省': '140000',
+      '内蒙古自治区': '150000', '辽宁省': '210000', '吉林省': '220000', '黑龙江省': '230000', '上海市': '310000',
+      '江苏省': '320000', '广东省': '440000', '新疆维吾尔自治区': '650000', '浙江省': '330000', '安徽省': '340000',
+      '福建省': '350000', '江西省': '360000', '山东省': '370000', '河南省': '410000', '湖北省': '420000',
+      '湖南省': '430000', '广西壮族自治区': '450000', '海南省': '460000', '重庆市': '500000', '四川省': '510000',
+      '贵州省': '520000', '云南省': '530000', '西藏自治区': '540000', '陕西省': '610000', '甘肃省': '620000', '青海省': '630000',
+      '宁夏回族自治区': '640000', '台湾省': '710000', '香港特别行政区': '810000', '澳门特别行政区': '820000', '台湾省': '710000'
+    };
+    var myChart = echarts.init(document.getElementById("main"), 'dark');
+    //各省份的地图json文件
+    var provincesdata = [{ name: '云南省', value: '53' }, { name: '北京市', value: '110' },];
+
+    // // 初始化全国地图
+    loadMap("./china.json", "china");
+
+    function loadMap(mapCode, name) {
+      $.get("./china.json", function (data) {
+        //使用 HTTP GET 请求从服务器加载数据
+        echarts.registerMap(name, data); //注册可用地图
+        var option_a = {
+          series: [
+            {
+              name: "MAP",
+              type: "map",
+              mapType: name,
+              selectedMode: false, //是否允许选中多个区域
+            },
+          ],
+        };
+        var option = {
+          series: [
+            {
+              name: "MAP",
+              type: "map",
+              mapType: name,
+              selectedMode: false, //是否允许选中多个区域
+            },
+            {
+              name: "地图demo(城市空气质量)",
+              // data: provincesdata,
+              geoIndex: 0,
+              type: "scatter",
+              coordinateSystem: option_a['series'][0],
+              data: [
+                { name: "北京", value: [116.46, 39.92, 340] },
+              ]
+            }
+          ],
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        myChart.on('click', function (params) {
+          console.log(params['name']);
+          $.get("https://geo.datav.aliyun.com/areas_v3/bound/" + String(provinces_name2code[params['name']]) + "_full.json", function (res) {
+            //使用 HTTP GET 请求从服务器加载数据
+            echarts.registerMap(params['name'], res); //注册可用地图
+            var option = {
+              geo: {
+
+              },
+              series: [
+                {
+                  name: "MAP",
+                  type: "map",
+                  mapType: params['name'],
+                  selectedMode: false, //是否允许选中多个区域
+                  // roam: true,
+                  label: {
+                    show: true
+                  }
+                  // data: provinces,
+                  // data: adcode,
+                },
+              ],
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+          });
+        });
+      });
+    };
+
+    main.ondblclick = function (params) {//鼠标双击事件函数
+      loadMap("./china.json", "china");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,10 +1,10 @@
-title: Lil'Log
-name: "Lilian's Tech Blog"
-author: Lilian Weng
-twitter_username: lilianweng
+title: LiGaoPeng'Log
+name: "LiGaoPeng's Tech Blog"
+author: Ligaopeng
+twitter_username: ligaopeng
 baseurl: "/lil-log"
 description: Document my learning notes.
-profile_url: "http://lilianweng.github.io"
+profile_url: "https://ligaopengde.github.io/"
 
 # Build settings
 markdown: kramdown

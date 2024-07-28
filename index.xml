@@ -19,74 +19,22 @@ In-context hallucination: The model output should be consistent with the source 
     </item>
     
     <item>
-      <title>Diffusion Models for Video Generation</title>
-      <link>https://ligaopengde.github.io/posts/2024-04-12-diffusion-video/</link>
-      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ligaopengde.github.io/posts/2024-04-12-diffusion-video/</guid>
-      <description>Diffusion models have demonstrated strong results on image synthesis in past years. Now the research community has started working on a harder task&amp;mdash;using it for video generation. The task itself is a superset of the image case, since an image is a video of 1 frame, and it is much more challenging because:
-It has extra requirements on temporal consistency across frames in time, which naturally demands more world knowledge to be encoded into the model.</description>
-    </item>
-    
-    <item>
-      <title>Thinking about High-Quality Human Data</title>
-      <link>https://ligaopengde.github.io/posts/2024-02-05-human-data-quality/</link>
-      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ligaopengde.github.io/posts/2024-02-05-human-data-quality/</guid>
-      <description>[Special thank you to Ian Kivlichan for many useful pointers (E.g. the 100+ year old Nature paper &amp;ldquo;Vox populi&amp;rdquo;) and nice feedback. 🙏 ]
-High-quality data is the fuel for modern data deep learning model training. Most of the task-specific labeled data comes from human annotation, such as classification task or RLHF labeling (which can be constructed as classification format) for LLM alignment training. Lots of ML techniques in the post can help with data quality, but fundamentally human data collection involves attention to details and careful execution.</description>
-    </item>
-    
-    <item>
-      <title>Adversarial Attacks on LLMs</title>
-      <link>https://ligaopengde.github.io/posts/2023-10-25-adv-attack-llm/</link>
-      <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ligaopengde.github.io/posts/2023-10-25-adv-attack-llm/</guid>
-      <description>The use of large language models in the real world has strongly accelerated by the launch of ChatGPT. We (including my team at OpenAI, shoutout to them) have invested a lot of effort to build default safe behavior into the model during the alignment process (e.g. via RLHF). However, adversarial attacks or jailbreak prompts could potentially trigger the model to output something undesired.
-A large body of ground work on adversarial attacks is on images, and differently it operates in the continuous, high-dimensional space.</description>
-    </item>
-    
-    <item>
-      <title>LLM Powered Autonomous Agents</title>
-      <link>https://ligaopengde.github.io/posts/2023-06-23-agent/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ligaopengde.github.io/posts/2023-06-23-agent/</guid>
-      <description>Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.
-Agent System Overview In a LLM-powered autonomous agent system, LLM functions as the agent&amp;rsquo;s brain, complemented by several key components:</description>
-    </item>
-    
-    <item>
-      <title>Prompt Engineering</title>
-      <link>https://ligaopengde.github.io/posts/2023-03-15-prompt-engineering/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ligaopengde.github.io/posts/2023-03-15-prompt-engineering/</guid>
-      <description>Prompt Engineering, also known as In-Context Prompting, refers to methods for how to communicate with LLM to steer its behavior for desired outcomes without updating the model weights. It is an empirical science and the effect of prompt engineering methods can vary a lot among models, thus requiring heavy experimentation and heuristics.
-This post only focuses on prompt engineering for autoregressive language models, so nothing with Cloze tests, image generation or multimodality models.</description>
-    </item>
-    
-    <item>
-      <title>The Transformer Family Version 2.0</title>
+      <title>GitHub 使用教程</title>
       <link>https://ligaopengde.github.io/posts/2023-01-27-the-transformer-family-v2/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ligaopengde.github.io/posts/2023-01-27-the-transformer-family-v2/</guid>
-      <description>Many new Transformer architecture improvements have been proposed since my last post on &amp;ldquo;The Transformer Family&amp;rdquo; about three years ago. Here I did a big refactoring and enrichment of that 2020 post &amp;mdash; restructure the hierarchy of sections and improve many sections with more recent papers. Version 2.0 is a superset of the old version, about twice the length.
-Notations Symbol Meaning $d$ The model size / hidden state dimension / positional encoding size.</description>
+      <description> 介绍linux下github的使用 </description>
     </item>
     
     <item>
-      <title>Large Transformer Model Inference Optimization</title>
+      <title>从零开始搭建个人博客网站</title>
       <link>https://ligaopengde.github.io/posts/2023-01-10-inference-optimization/</link>
       <pubDate>Tue, 10 Jan 2023 10:00:00 -0700</pubDate>
       
       <guid>https://ligaopengde.github.io/posts/2023-01-10-inference-optimization/</guid>
       <description>[Updated on 2023-01-24: add a small section on Distillation.]
-Large transformer models are mainstream nowadays, creating SoTA results for a variety of tasks. They are powerful but very expensive to train and use. The extremely high inference cost, in both time and memory, is a big bottleneck for adopting a powerful transformer for solving real-world tasks at scale.
-Why is it hard to run inference for large transformer models? Besides the increasing size of SoTA models, there are two main factors contributing to the inference challenge (Pope et al.</description>
+博客网站 (Pope et al.</description>
     </item>
     
   </channel>
